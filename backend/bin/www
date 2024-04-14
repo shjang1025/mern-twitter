@@ -31,10 +31,10 @@ var server = http.createServer(app);
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => {
-    dbLogger("Connected to MongoDB successfully");
+    debug("Connected to MongoDB successfully");
     server.listen(port);
   })
-  .catch(err => serverLogger(err));
+  .catch(err => debug(err));
 
 
 // failure callback when server has trouble starting
